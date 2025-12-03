@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Software Engineer";
+  const fullText = "Full Stack Developer & Data Analyst";
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -95,8 +95,8 @@ const Hero = () => {
           variants={itemVariants}
           className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10 text-balance"
         >
-          Building elegant, scalable systems with clean code. Passionate about
-          distributed systems, cloud architecture, and developer experience.
+          Building modern web applications with React, Django & PostgreSQL. 
+          Passionate about data analysis and solving real-world problems with technology.
         </motion.p>
 
         <motion.div
