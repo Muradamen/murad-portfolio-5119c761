@@ -5,6 +5,23 @@ import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 
+// Import project images
+import projectHotel from "@/assets/project-hotel.jpg";
+import projectSocial from "@/assets/project-social.jpg";
+import projectMiratech from "@/assets/project-miratech.jpg";
+import projectData from "@/assets/project-data.jpg";
+import projectAsr from "@/assets/project-asr.jpg";
+import projectPlastic from "@/assets/project-plastic.jpg";
+
+const projectImages: Record<string, string> = {
+  "1": projectHotel,
+  "2": projectSocial,
+  "3": projectMiratech,
+  "4": projectData,
+  "5": projectAsr,
+  "6": projectPlastic,
+};
+
 const Projects = () => {
   return (
     <section id="projects" className="py-24 md:py-32">
@@ -15,7 +32,7 @@ const Projects = () => {
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A selection of projects I've built, from cloud platforms to developer tools.
+              A selection of projects from web development to data analysis.
             </p>
           </div>
         </Reveal>
@@ -26,66 +43,80 @@ const Projects = () => {
             <Reveal key={project.id} delay={index * 0.1}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className={`group relative rounded-2xl border border-border bg-card p-6 card-glow ${
+                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-glow ${
                   project.featured ? "lg:col-span-2 lg:row-span-1" : ""
                 }`}
               >
-                {/* Project icon */}
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Folder className="h-6 w-6 text-primary" />
+                {/* Project Image */}
+                {projectImages[project.id] && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={projectImages[project.id]}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="View on GitHub"
-                      >
-                        <Github className="h-5 w-5" />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                        aria-label="View live site"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    )}
+                )}
+
+                <div className="p-6">
+                  {/* Project header */}
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Folder className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                          aria-label="View on GitHub"
+                        >
+                          <Github className="h-5 w-5" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                          aria-label="View live site"
+                        >
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+                  {/* Content */}
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="text-xs font-medium"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="text-xs font-medium"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Featured badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary/20 text-primary border-0">
+                    <Badge className="bg-primary/20 text-primary border-0 backdrop-blur-sm">
                       Featured
                     </Badge>
                   </div>
@@ -99,7 +130,7 @@ const Projects = () => {
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
               <a
-                href="https://github.com/muradamin"
+                href="https://github.com/Muradamen"
                 target="_blank"
                 rel="noopener noreferrer"
               >
