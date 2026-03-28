@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/data";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Full Stack Developer & Data Analyst";
+  const fullText = "Data Analyst & Data Scientist";
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -33,10 +33,7 @@ const Hero = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
   };
 
@@ -45,19 +42,13 @@ const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.4, 0.25, 1] as const,
-      },
+      transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] as const },
     },
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-      
-      {/* Animated grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--muted)/0.3)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--muted)/0.3)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,black_40%,transparent_100%)]" />
 
       <motion.div
@@ -67,8 +58,9 @@ const Hero = () => {
         className="container relative z-10 text-center px-4"
       >
         <motion.div variants={itemVariants} className="mb-6">
-          <span className="inline-block px-4 py-2 rounded-full border border-border bg-card/50 text-sm text-muted-foreground backdrop-blur-sm">
-            👋 Welcome to my portfolio
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 text-sm text-muted-foreground backdrop-blur-sm">
+            <BarChart3 className="h-4 w-4 text-primary" />
+            Data Science Portfolio
           </span>
         </motion.div>
 
@@ -95,8 +87,8 @@ const Hero = () => {
           variants={itemVariants}
           className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10 text-balance"
         >
-          Building modern web applications with React, Django & PostgreSQL. 
-          Passionate about data analysis and solving real-world problems with technology.
+          Transforming raw data into actionable business insights with Python, SQL & Power BI.
+          Passionate about data-driven decision making and solving real-world problems through analytics.
         </motion.p>
 
         <motion.div
@@ -124,35 +116,18 @@ const Hero = () => {
           variants={itemVariants}
           className="flex items-center justify-center gap-6"
         >
-          <a
-            href={socialLinks.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="GitHub"
-          >
+          <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
             <Github className="h-6 w-6" />
           </a>
-          <a
-            href={socialLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="LinkedIn"
-          >
+          <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
             <Linkedin className="h-6 w-6" />
           </a>
-          <a
-            href={`mailto:${socialLinks.email}`}
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Email"
-          >
+          <a href={`mailto:${socialLinks.email}`} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
             <Mail className="h-6 w-6" />
           </a>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
