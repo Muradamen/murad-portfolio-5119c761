@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Professional Data Scientist";
+  const fullText = "Data Analyst | Transforming Data into Business Insights";
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
