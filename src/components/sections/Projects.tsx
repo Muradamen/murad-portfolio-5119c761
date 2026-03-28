@@ -1,25 +1,24 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { ExternalLink, Github, Folder, Lightbulb } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 
-// Import project images
-import projectHotel from "@/assets/project-hotel.jpg";
-import projectSocial from "@/assets/project-social.jpg";
-import projectMiratech from "@/assets/project-miratech.jpg";
+import projectPython from "@/assets/project-python-foundations.jpg";
+import projectSuperstore from "@/assets/project-superstore.jpg";
+import projectWater from "@/assets/project-water-access.jpg";
 import projectData from "@/assets/project-data.jpg";
 import projectAsr from "@/assets/project-asr.jpg";
-import projectPlastic from "@/assets/project-plastic.jpg";
+import projectSocial from "@/assets/project-social.jpg";
 
 const projectImages: Record<string, string> = {
-  "1": projectHotel,
-  "2": projectSocial,
-  "3": projectMiratech,
+  "1": projectPython,
+  "2": projectSuperstore,
+  "3": projectWater,
   "4": projectData,
   "5": projectAsr,
-  "6": projectPlastic,
+  "6": projectSocial,
 };
 
 const Projects = () => {
@@ -32,88 +31,79 @@ const Projects = () => {
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A selection of projects from web development to data analysis.
+              Real-world data analysis projects showcasing business insights, dashboards, and problem-solving.
             </p>
           </div>
         </Reveal>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.1}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-glow ${
-                  project.featured ? "lg:col-span-2 lg:row-span-1" : ""
+                className={`group relative rounded-2xl border border-border bg-card overflow-hidden card-glow h-full flex flex-col ${
+                  project.featured ? "lg:col-span-1" : ""
                 }`}
               >
-                {/* Project Image */}
                 {projectImages[project.id] && (
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={projectImages[project.id]}
                       alt={project.title}
+                      loading="lazy"
+                      width={800}
+                      height={512}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                   </div>
                 )}
 
-                <div className="p-6">
-                  {/* Project header */}
+                <div className="p-6 flex flex-col flex-1">
                   <div className="mb-4 flex items-center justify-between">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                       <Folder className="h-5 w-5 text-primary" />
                     </div>
                     <div className="flex items-center gap-2">
                       {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="View on GitHub"
-                        >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="View on GitHub">
                           <Github className="h-5 w-5" />
                         </a>
                       )}
                       {project.live && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors"
-                          aria-label="View live site"
-                        >
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="View live">
                           <ExternalLink className="h-5 w-5" />
                         </a>
                       )}
                     </div>
                   </div>
 
-                  {/* Content */}
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed flex-1">
                     {project.description}
                   </p>
 
-                  {/* Tags */}
+                  {/* Key Insight */}
+                  {project.insights && (
+                    <div className="mb-4 p-3 rounded-lg bg-primary/5 border border-primary/10">
+                      <div className="flex items-start gap-2">
+                        <Lightbulb className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <p className="text-xs text-foreground/80">{project.insights}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="text-xs font-medium"
-                      >
+                      <Badge key={tag} variant="secondary" className="text-xs font-medium">
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 </div>
 
-                {/* Featured badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-primary/20 text-primary border-0 backdrop-blur-sm">
@@ -129,11 +119,7 @@ const Projects = () => {
         <Reveal delay={0.4}>
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://github.com/Muradamen"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/Muradamen" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 View All on GitHub
               </a>
