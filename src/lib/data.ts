@@ -199,8 +199,11 @@ export const techStack: TechItem[] = [
   { name: "PostgreSQL", icon: "🐘", category: "Tools" },
   // ML
   { name: "Scikit-learn", icon: "🤖", category: "Machine Learning" },
+  { name: "XGBoost", icon: "⚡", category: "Machine Learning" },
+  { name: "TF-IDF/NLP", icon: "📝", category: "Machine Learning" },
   { name: "Excel", icon: "📗", category: "Tools" },
   { name: "Linux", icon: "🐧", category: "Tools" },
+  { name: "Streamlit", icon: "🚀", category: "Tools" },
 ];
 
 export const skillCategories = [
