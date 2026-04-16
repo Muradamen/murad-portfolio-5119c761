@@ -10,15 +10,27 @@ import projectSuperstore from "@/assets/project-superstore.jpg";
 import projectWater from "@/assets/project-water-access.jpg";
 import projectData from "@/assets/project-data.jpg";
 import projectAsr from "@/assets/project-asr.jpg";
-import projectSocial from "@/assets/project-social.jpg";
+import projectHousePrice from "@/assets/project-house-price.jpg";
+import projectAttrition from "@/assets/project-employee-attrition.jpg";
+import projectFraud from "@/assets/project-fraud-detection.jpg";
+import projectNlp from "@/assets/project-nlp-sentiment.jpg";
+import projectLoan from "@/assets/project-loan-approval.jpg";
+import projectSegmentation from "@/assets/project-customer-segmentation.jpg";
+import projectEcommerce from "@/assets/project-ecommerce-forecast.jpg";
 
 const projectImages: Record<string, string> = {
   "1": projectPython,
   "2": projectSuperstore,
   "3": projectWater,
-  "4": projectData,
-  "5": projectAsr,
-  "6": projectSocial,
+  "4": projectHousePrice,
+  "5": projectAttrition,
+  "6": projectFraud,
+  "7": projectNlp,
+  "8": projectLoan,
+  "9": projectSegmentation,
+  "10": projectEcommerce,
+  "11": projectData,
+  "12": projectAsr,
 };
 
 const Projects = () => {
