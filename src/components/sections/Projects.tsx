@@ -32,6 +32,7 @@ const projectImages: Record<string, string> = {
   "10": projectEcommerce,
   "11": projectData,
   "12": projectAsr,
+  "13": projectAnomaly,
 };
 
 const Projects = () => {
