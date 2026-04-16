@@ -17,6 +17,7 @@ import projectNlp from "@/assets/project-nlp-sentiment.jpg";
 import projectLoan from "@/assets/project-loan-approval.jpg";
 import projectSegmentation from "@/assets/project-customer-segmentation.jpg";
 import projectEcommerce from "@/assets/project-ecommerce-forecast.jpg";
+import projectAnomaly from "@/assets/project-anomaly-detection.jpg";
 
 const projectImages: Record<string, string> = {
   "1": projectPython,
