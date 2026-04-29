@@ -1,6 +1,6 @@
-import { aboutText } from "@/lib/data";
+import { aboutText, aboutHighlights } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { Target, TrendingUp, Database } from "lucide-react";
+import { Target, TrendingUp, Database, CheckCircle2 } from "lucide-react";
 
 const About = () => {
   return (
@@ -16,8 +16,22 @@ const About = () => {
 
         <div className="max-w-3xl mx-auto">
           <Reveal>
-            <div className="text-lg text-muted-foreground leading-relaxed mb-12 whitespace-pre-line text-center">
+            <div className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 whitespace-pre-line">
               {aboutText}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="rounded-2xl border border-border bg-card p-6 mb-12">
+              <h3 className="font-semibold mb-4 text-foreground">My work includes:</h3>
+              <ul className="space-y-3">
+                {aboutHighlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm md:text-base text-muted-foreground">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
 

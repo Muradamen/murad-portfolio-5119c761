@@ -235,6 +235,40 @@ export const socialLinks = {
   email: "muradamin@miratech.dev",
 };
 
-export const aboutText = `I am a results-driven Data Analyst & aspiring Data Scientist from Ethiopia, passionate about transforming raw data into actionable business insights.
+export const aboutText = `I am a Data Analyst & AI Solutions Builder based in Ethiopia, focused on transforming raw data into meaningful insights that drive real business results.
 
-I specialize in Python, SQL, and Power BI to perform exploratory data analysis, build interactive dashboards, and uncover trends that drive strategic decision-making. With a strong foundation in statistical analysis and machine learning, I solve real-world problems through data-driven approaches.`;
+I specialize in using Python, SQL, and Power BI to clean, analyze, and visualize data—helping businesses understand their performance, identify trends, and make smarter decisions.
+
+I have completed advanced training through ALX Africa, where I built practical, real-world projects such as customer churn prediction systems and business intelligence dashboards.
+
+Currently, I focus on helping small and medium businesses understand their data clearly, track performance through dashboards, and make confident, data-driven decisions. I am open to freelance opportunities, collaborations, and data-driven projects.`;
+
+export const aboutHighlights = [
+  "Cleaning and transforming complex datasets into structured, usable formats",
+  "Building interactive dashboards for real-time insights",
+  "Analyzing customer and sales data to uncover patterns",
+  "Developing simple machine learning models for prediction and optimization",
+];
+
+export const services = [
+  {
+    title: "Data Cleaning & Transformation",
+    description: "Turn messy, inconsistent data into clean, structured datasets ready for analysis and reporting.",
+    icon: "Database",
+  },
+  {
+    title: "Dashboard Development",
+    description: "Interactive Power BI and Streamlit dashboards that surface KPIs and trends in real time.",
+    icon: "LayoutDashboard",
+  },
+  {
+    title: "Business Data Analysis & Insights",
+    description: "Deep analysis of sales, customer, and operations data to uncover growth opportunities.",
+    icon: "TrendingUp",
+  },
+  {
+    title: "Basic Machine Learning Models",
+    description: "Practical ML models for prediction, segmentation, and process optimization.",
+    icon: "Brain",
+  },
+];
