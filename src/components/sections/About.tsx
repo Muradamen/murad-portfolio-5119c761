@@ -1,6 +1,7 @@
 import { aboutText, aboutHighlights } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { Target, TrendingUp, Database, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Target, TrendingUp, Database, CheckCircle2, Download } from "lucide-react";
 
 const About = () => {
   return (
@@ -32,6 +33,25 @@ const About = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <div className="flex flex-col items-center text-center mb-12">
+              <Button size="lg" asChild>
+                <a
+                  href="/Murad_Amin_Data_Analyst_CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV (PDF)
+                </a>
+              </Button>
+              <p className="text-sm text-muted-foreground mt-3">
+                📩 Open to freelance and remote opportunities
+              </p>
             </div>
           </Reveal>
 
