@@ -20,20 +20,30 @@ import projectEcommerce from "@/assets/project-ecommerce-forecast.jpg";
 import projectAnomaly from "@/assets/project-anomaly-detection.jpg";
 
 const projectImages: Record<string, string> = {
-  "1": projectPython,
+  "1": projectAttrition,
   "2": projectSuperstore,
-  "3": projectWater,
-  "4": projectHousePrice,
-  "5": projectAttrition,
-  "6": projectFraud,
-  "7": projectNlp,
-  "8": projectLoan,
+  "3": projectSuperstore,
+  "4": projectSegmentation,
+  "5": projectHousePrice,
+  "6": projectHousePrice,
+  "7": projectAttrition,
+  "8": projectEcommerce,
   "9": projectSegmentation,
-  "10": projectEcommerce,
-  "11": projectData,
-  "12": projectAsr,
-  "13": projectAnomaly,
+  "10": projectFraud,
+  "11": projectNlp,
+  "12": projectLoan,
+  "13": projectSegmentation,
+  "14": projectSegmentation,
+  "15": projectAnomaly,
+  "16": projectHousePrice,
+  "17": projectWater,
+  "18": projectWater,
+  "19": projectWater,
+  "20": projectWater,
 };
+
+// Suppress unused import warnings — kept available for future projects
+void projectPython; void projectData; void projectAsr;
 
 const Projects = () => {
   return (
