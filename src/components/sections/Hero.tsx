@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, BarChart3 } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, BarChart3, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/data";
 import { useState, useEffect } from "react";
@@ -94,7 +94,19 @@ const Hero = () => {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
+          <Button size="lg" asChild>
+            <a
+              href="/Murad_Amin_Data_Analyst_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download CV (PDF)
+            </a>
+          </Button>
           <Button
+            variant="outline"
             size="lg"
             className="group"
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
@@ -103,13 +115,20 @@ const Hero = () => {
             <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
           </Button>
           <Button
-            variant="outline"
+            variant="ghost"
             size="lg"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Get in Touch
           </Button>
         </motion.div>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-sm text-muted-foreground mb-10"
+        >
+          📩 Open to freelance and remote opportunities
+        </motion.p>
 
         <motion.div
           variants={itemVariants}
