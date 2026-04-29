@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Data Analyst | Transforming Data into Business Insights";
+  const fullText = "Data Analyst & AI Solutions Builder";
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -87,8 +87,7 @@ const Hero = () => {
           variants={itemVariants}
           className="max-w-2xl mx-auto text-lg text-muted-foreground mb-10 text-balance"
         >
-          Transforming raw data into actionable business insights with Python, SQL & Power BI.
-          Passionate about data-driven decision making and solving real-world problems through analytics.
+          I help businesses turn raw, messy data into clear insights and interactive dashboards that improve decision-making and performance.
         </motion.p>
 
         <motion.div
