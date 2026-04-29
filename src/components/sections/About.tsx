@@ -1,6 +1,6 @@
-import { aboutText } from "@/lib/data";
+import { aboutText, aboutHighlights } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { Target, TrendingUp, Database } from "lucide-react";
+import { Target, TrendingUp, Database, CheckCircle2 } from "lucide-react";
 
 const About = () => {
   return (
