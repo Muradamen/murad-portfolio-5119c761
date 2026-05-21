@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, BarChart3, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/data";
 import { useState, useEffect } from "react";
+import CVPreviewButton from "@/components/CVPreviewButton";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
@@ -94,17 +95,8 @@ const Hero = () => {
           variants={itemVariants}
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
-          <Button size="lg" asChild>
-            <a
-              href="/Murad_Amin_Data_Analyst_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              download
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download CV (PDF)
-            </a>
-          </Button>
+          <CVPreviewButton />
+
           <Button
             variant="outline"
             size="lg"
