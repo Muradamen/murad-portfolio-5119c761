@@ -1,7 +1,7 @@
 import { aboutText, aboutHighlights } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { Button } from "@/components/ui/button";
-import { Target, TrendingUp, Database, CheckCircle2, Download } from "lucide-react";
+import CVPreviewButton from "@/components/CVPreviewButton";
+import { Target, TrendingUp, Database, CheckCircle2 } from "lucide-react";
 
 const About = () => {
   return (
