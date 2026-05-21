@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, BarChart3, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/lib/data";
 import { useState, useEffect } from "react";
+import CVPreviewButton from "@/components/CVPreviewButton";
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
