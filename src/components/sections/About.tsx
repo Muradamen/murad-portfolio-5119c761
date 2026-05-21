@@ -38,17 +38,8 @@ const About = () => {
 
           <Reveal delay={0.15}>
             <div className="flex flex-col items-center text-center mb-12">
-              <Button size="lg" asChild>
-                <a
-                  href="/Murad_Amin_Data_Analyst_CV.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV (PDF)
-                </a>
-              </Button>
+              <CVPreviewButton />
+
               <p className="text-sm text-muted-foreground mt-3">
                 📩 Open to freelance and remote opportunities
               </p>
